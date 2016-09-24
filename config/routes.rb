@@ -1,4 +1,11 @@
 Nerdyderby::Application.routes.draw do
+  root 'main#rank'
+  get "main/regist" => 'main#regist'
+  post "main/regist_complete"
+	get "main/before_admin" => 'main#before_admin'
+  post "main/admin_check"
+	get "main/admin" => 'main#admin'
+  get "main/admin_complete/:id" => 'main#admin_complete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

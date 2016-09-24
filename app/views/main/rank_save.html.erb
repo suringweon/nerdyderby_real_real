@@ -1,0 +1,32 @@
+<div class="container">
+  <% if !flash[:alert].nil? %>
+	<div class="alert alert-danger">
+		<%= flash[:alert] %>
+	</div>
+	<% end %>
+	<div class="well text-center">
+	<h2>순위 확인 페이지입니다.</h2>
+	<p>자신의 기록을 찾아보세요!</p>
+	</div>
+<div class="panel panel-default">
+		<!-- Table -->
+		<table class="table">
+			<thead>
+				<tr>
+					<th>순위</th><th>사진</th><th>기록</th><th>차량이름</th><th>설명</th>
+				</tr>
+			</thead>
+			<tbody>
+<% i=1 %>
+<% @users.each do |user|%>
+
+				<tr>
+					<th><%=i%></th><td>image</td><td><%=user.record%></td><td><%=user.carname%></td><td>content</td>
+
+				</tr>
+<% i=i+1 %>				
+<% end %>
+			</tbody>
+		</table>
+</div>
+</div>

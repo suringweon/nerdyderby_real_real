@@ -1,0 +1,159 @@
+.container{
+}
+.input-group-lg{
+}
+
+.question{
+font-family: 'Jeju Gothic', serif;
+font-size:17px;
+color:#1FA3DC;
+}
+#pic, #carname{
+text-shadow:-1px 1px 0px #0054ff;
+}
+#name, #discrip{
+color:#ff0000;
+text-shadow:-1px 1px 0px  #ffe400;
+}
+#phonenum{
+color:#ffe400;
+text-shadow:-1px 1px 0px #ff5e00;
+}
+
+#cardtitle{
+text-align:center;
+font-family: 'Press Start 2P', cursive;
+font-size: 27px;
+}
+/*
+#cardtitle > p{
+color:#1FA3DC;
+text-shadow:-2px 2px 0px #0054FF;
+}
+*/
+#redlet{
+color:#ff0000;
+text-shadow:-2px 2px 0px #ffe400;
+}
+#bluelet{
+color:#1FA3DC;
+text-shadow:-2px 2px 0px #0054ff;
+}
+#yellet{
+color:#ffe400;
+text-shadow:-2px 2px 0px #ff5e00;
+}
+
+
+
+#basic-url, #basic-url2, #basic-url3{
+height:15px;
+}
+#basic-url, #basic-url2, #basic-url3, #basic-url4{
+border-radius:0px;
+-webkit-appearance:none;
+-moz-appearance:none;
+appearance:none;
+margin-right:50px;
+margin-left:25px;
+margin-bottom:20px;
+border-bottom: 3px solid #1FA3DC ;
+border-top:none;
+border-left:none;
+border-right:none;
+outline:none;
+display:inline;
+}
+
+
+#pagename{
+font-family: 'Press Start 2P', cursive;
+font-size: 23px;
+}
+
+#logobox{
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 200px;
+	}
+
+#inputform{
+margin-top:30px;
+margin-left:20px;
+border-radius:30px;
+border-right:8px solid #1FA3DC; 
+border-left:8px solid #1FA3DC;
+border-top:0px solid #1FA3DC; 
+border-bottom:0px solid #1FA3DC; 
+margin-bottom:30px;
+padding-bottom:20px;
+}
+#uploadpic{
+display:inline-block;
+margin-left:50px;
+}
+
+#picboxalign
+{
+text-align:center;
+}
+
+#picbox{
+margin-bottom:20px;
+margin-top:5px;
+margin-left:50px;
+margin-right:50px;
+padding-left:0px;
+padding-right:0px;
+padding-top:40px;
+padding-bottom:40px;
+display:inline-block;
+text-align:center;
+}
+#letterbox{
+margin-left:50px;
+margin-right:50px;
+padding-right:50px;
+}
+
+#logo{
+	width:100%;
+	margin-bottom:15px;
+	}
+#subbtn{
+text-align:center;
+}
+#submitbtn{
+border: 3px solid #1FA3DC;
+font-family: 'Jeju Gothic', serif;
+font-size:17px;
+color:#1FA3DC;
+
+}
+#submitbtn:hover, #submitbtn:active{
+background:#1fa3dc;
+color:white;
+}
+
+::-webkit-input-placeholder {
+ font-size: 14px;
+  color: #d0cdfa;
+	 text-transform: uppercase;
+	  text-transform: uppercase;
+		}
+		:-moz-placeholder { /* older Firefox*/
+		 font-size:14px;
+		  color: #d0cdfa;
+			 text-transform: uppercase;
+			  
+				}
+				::-moz-placeholder { /* Firefox 19+ */ 
+				 font-size: 14px;
+				  color: #d0cdfa; 
+					 text-transform: uppercase;
+					  } 
+						:-ms-input-placeholder { 
+						 font-size: 14px; 
+						  color: #d0cdfa;
+							 text-transform: uppercase;
+							  }

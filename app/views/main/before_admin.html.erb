@@ -1,0 +1,23 @@
+
+<div class="container">
+  <% if !flash[:alert].nil? %>
+	<div class="alert alert-danger">
+		<%= flash[:alert] %>
+	</div>
+	<% end %>
+	<div class="well text-center">
+			<h2>관리자 확인 페이지입니다.</h2>
+	</div>
+
+
+<form action="/main/admin_check" method ="post">
+	<label for="basic-url">비밀번호</label>
+	<div class="input-group-lg">
+		<input type="password" name="password" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="비밀번호를 입력하세요.">
+	</div	>
+	<br>
+	<button type="submit" class="btn btn-default btn-lg">
+	확인
+</button>
+</form>
+</div>
