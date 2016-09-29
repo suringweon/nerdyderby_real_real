@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(version: 20160920132428) do
     t.string   "phone"
     t.string   "carname"
     t.string   "image"
+    t.string   "rail"
     t.string   "record",     default: ""
+    t.integer  "group"
+    t.string   "content",    default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end

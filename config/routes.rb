@@ -2,6 +2,7 @@ Nerdyderby::Application.routes.draw do
   root 'main#rank'
   get "main/regist" => 'main#regist'
   post "main/regist_complete"
+	get "main/check_turn" => 'main#check_turn'
 	get "main/before_admin" => 'main#before_admin'
   post "main/admin_check"
 	get "main/admin" => 'main#admin'

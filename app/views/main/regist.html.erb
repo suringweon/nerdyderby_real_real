@@ -1,41 +1,102 @@
 
+<%= render :partial => "layouts/header" %>
+<link rel="stylesheet" type="text/css" href="assets/regist.css">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">
+
+
 <div class="container">
-  <% if !flash[:alert].nil? %>
+	<% if !flash[:alert].nil? %>
 	<div class="alert alert-danger">
 		<%= flash[:alert] %>
 	</div>
 	<% end %>
+
+
+	<!--
 	<div class="well text-center">
 			<h2>자동차 등록 페이지입니다.</h2>
 			<p>자신의 자동차를 등록하세요!</p>
-	</div>
+</div>
+-->
+
+<div class="row">
+<div class="col-md-3" id="logobox">
+<img src="/nd_logo.png" id="logo" >
+<p id="pagename">R E G I S T</p>
+<p>"출발 준비 되셨나요?"</p>
+</div>
+
+<div class="col-md-6" id="inputform">
+
+<div id="cardtitle">
+<p>
+<font id="bluelet">- </font>
+<font id="bluelet">P </font>
+<font id="redlet">L </font>
+<font id="yellet">A </font>
+<font id="bluelet">Y </font>
+<font id="redlet">E </font>
+<font id="yellet">R </font>
+<font id="bluelet">-</font>
+
+</p>
+
+</div>
+
+<form action="/main/regist_complete" method ="post" enctype="multipart/form-data">
 
 
-<form action="/main/regist_complete" method ="post">
-	<label for="basic-url">이름</label>
+<div id="picboxalign">
+<div id="picbox">
+<label class="question" for="basic-url4" id="pic">사진</label>
+	<div class="input-group-lg">
+		<input type="file" name="image" id="uploadpic" >
+	</div	>
+</div>
+</div>
+
+<div id="letterbox">
+	<label class="question"  for="basic-url" id="name">이름</label>
 	<div class="input-group-lg">
 		<input type="text" name="username" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="이름을 입력하세요.">
 	</div	>
 <br>
-	<label for="basic-url">전화번호</label>
+	<label class="question" for="basic-url2" id="phonenum">전화번호</label>
 	<div class="input-group-lg">
-		<input type="text" name="phone" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="000-0000-0000">
+		<input type="text" name="phone" class="form-control" id="basic-url2" aria-describedby="basic-addon3" placeholder="000-0000-0000">
 	</div	>
 <br>
-	<label for="basic-url">자동차 이름</label>
+	<label class="question" for="basic-url3" id="carname">자동차 이름</label>
 	<div class="input-group-lg">
-		<input type="text" name="carname" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="자동차 이름을 입력하세요.">
+		<input type="text" name="carname" class="form-control" id="basic-url3" aria-describedby="basic-addon3" placeholder="자동차 이름을 입력하세요.">
 	</div	>
+<br>
+<div class="input-group-lg">
+	<div class="form-group">
+	<label class="question" for="basic-url4" id="discrip">설명</label>
+		  <textarea class="form-control"name="content" rows="5" id="basic-url4" placeholder="자동차에 대해 설명해주세요!"></textarea>
+			</div></div>
 
-<br>
-	<label for="basic-url">자동차 이름</label>
-	<label for="basic-url">사진</label>
-	<div class="input-group-lg">
-		<input type="text" name="image" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="첨부파일을 선택하세요.">
-	</div	>
-	<br>
-	<button type="submit" class="btn btn-default btn-lg">
+<div id="subbtn">
+	<button type="submit" class="btn btn-default btn-lg" id="submitbtn" >
 	등록하기
 </button>
+
+</div>
+</div>
 </form>
+
+</div>
+
+<div id="col-md-3">
+</div>
+
+<div id="row">
+</div>
+
+
+
+</div>
+
 </div>
