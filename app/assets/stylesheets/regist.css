@@ -5,7 +5,7 @@
 
 .question{
 font-family: 'Jeju Gothic', serif;
-font-size:17px;
+font-size:25px;
 color:#1FA3DC;
 }
 #pic, #carname{
@@ -47,7 +47,6 @@ text-shadow:-2px 2px 0px #ff5e00;
 
 
 #basic-url, #basic-url2, #basic-url3{
-height:15px;
 }
 #basic-url, #basic-url2, #basic-url3, #basic-url4{
 border-radius:0px;

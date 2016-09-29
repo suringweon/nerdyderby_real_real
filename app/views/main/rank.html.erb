@@ -8,67 +8,143 @@
 	<h2>순위 확인 페이지입니다.</h2>
 	<p>자신의 기록을 찾아보세요!</p>
 	</div>-->
+<link rel"stylesheet" type="text/css" href="assets/rank.css">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-3">
+</div>
+
+<div class="col-md-1" id="fasttrophy">
+<div id="fastpic"></div>
+<div class="trophytitle">
+THE<br>FASTEST
+</div>
+</div>
+
+
+
+<div class="col-md-7" id="fastrank">
 <% first = @users.first %>
 <% second =@users.second %>
 <% third = @users.third %>
-<div class="panel panel-default">
 
 <p> 이름 , 차이름 , 기록 </p>
+
+<div class="firstbox" id="fastfirst">
 <% if first.nil? %>
 	<p> no record yet </p>
 <%else%>
 <p><%= first.username %>, <%= first.carname %>, <%= first.record %></p>
 <% end%>
+</div>
+<div id="redcar_fast"></div>
 
+
+<div class="secondbox" id="fastsecond">
 <% if second.nil? %>
 	<p> no record yet </p>
 <%else%>
 <p><%= second.username %>, <%= second.carname %>, <%= second.record %></p>
 <% end%>
+</div>
+<div class="bluecar" id="bluecar_fast"></div>
 
+<div class="thirdbox" id="fastthird">
 <% if third.nil? %>
 	<p> no record yet </p>
 <%else%>
 <p><%= third.username %>, <%= third.carname %>, <%= third.record %></p>
 <% end%>
+</div>
+<div id="yellowcar_fast"></div>
+
 
 </div>
 
+<div class="col-md-1">
+</div>
 
-<div class="panel panel-default">
+</div>
+ 
+<div class="row">
+
+<div class="col-md-3" id="logobox_rank">
+<img src="/nd_logo_new.png" id="logo">
+<p id="pagename">P L A Y E R  N O W</p>
+
+
+</div>
+
+<div class="col-md-2" id="nowtrack1">
 <p> 트랙사진자리 </p>
+</div>
 
+<div class="col-md-2" id="nowtrack2">
+</div>
+
+<div class="col-md-2" id="nowtrack3">
+</div>
+
+
+<div class="col-md-3">
+</div>
 
 </div>
 
 
+<div class="row">
 
-<div class="panel panel-default">
+<div class="col-md-3">
+</div>
 
+<div class="col-md-1" id="slowtrophy">
+<div id="slowpic"></div>
+<p class="trophytitle">THE SLOWEST</p>
+</div>
+
+<div class="col-md-7" id="slowrank">
 <% rfirst = @users.reverse.first %>
 <% rsecond =@users.reverse.second %>
 <% rthird = @users.reverse.third %>
-<div class="panel panel-default">
-
 
 <p> 이름 , 차이름 , 기록 </p>
+
+<div class="firstbox" id="slowfirst">
 <% if rfirst.nil? %>
 	<p> no record yet </p>
 <%else%>
 <p><%= rfirst.username %>, <%= rfirst.carname %>, <%= rfirst.record %></p>
 <% end%>
+</div>
 
+<div class="secondbox" id="slowsecond">
 <% if rsecond.nil? %>
 	<p> no record yet </p>
 <%else%>
 <p><%= rsecond.username %>, <%= rsecond.carname %>, <%= rsecond.record %></p>
 <% end%>
+</div>
 
+<div class="thirdbox" id="slowthird">
 <% if rthird.nil? %>
 	<p> no record yet </p>
 <%else%>
 <p><%= rthird.username %>, <%= rthird.carname %>, <%= rthird.record %></p>
 <% end%>
+</div>
+
 
 </div>
+
+<div class="col-md-1">
+</div>
+
+
+</div>
+
+
 </div>
