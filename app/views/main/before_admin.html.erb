@@ -9,8 +9,11 @@
 	<div class="well text-center">
 			<h2>관리자 확인 페이지입니다.</h2>
 	</div>
-
-
+<% if !@data.nil? %>
+<%= @data %>
+<%else%>
+<p> there is no data </p>
+<%end %>
 <form action="/main/admin_check" method ="post">
 	<label for="basic-url">비밀번호</label>
 	<div class="input-group-lg">

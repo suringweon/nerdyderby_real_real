@@ -8,6 +8,9 @@
 	<h2>순위 확인 페이지입니다.</h2>
 	<p>자신의 기록을 찾아보세요!</p>
 	</div>-->
+
+
+<%= render :partial => "layouts/header" %>
 <link rel"stylesheet" type="text/css" href="assets/rank.css">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
@@ -76,17 +79,35 @@ THE<br>FASTEST
 <img src="/nd_logo_new.png" id="logo">
 <p id="pagename">P L A Y E R  N O W</p>
 
-
 </div>
 
 <div class="col-md-2" id="nowtrack1">
-<p> 트랙사진자리 </p>
+<% if !@A.nil? %>
+<p>	<%= @A.username %>,<%= @A.carname %></p>
+<p><img src="<%=@A.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
+
 </div>
 
 <div class="col-md-2" id="nowtrack2">
+<% if !@B.nil? %>
+<p>	<%= @B.username %>,<%= @B.carname %></p>
+<p><img src="<%=@B.image_url(:thumb)%>"></p>
+<p> 기록</p>
+<% else %>
+<% end %>
+
 </div>
 
-<div class="col-md-2" id="nowtrack3">
+	<div class="col-md-2" id="nowtrack3">
+<%if !@C.nil? %>
+	<p>	<%= @C.username %>,<%= @C.carname %></p>
+	<p><img src="<%=@C.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
 </div>
 
 

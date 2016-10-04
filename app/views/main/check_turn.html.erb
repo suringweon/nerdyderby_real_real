@@ -9,6 +9,11 @@
 	<p>자신의 차례를 확인해주세요!</p>
 	</div>
 <div class="panel panel-default">
- 
+<p> 여기에데이터뜰꺼임</p>
+<% if @data.nil? %>
+<p> there is no data </p>
+<% else %>
+<p> <%=@data %> </p> 
+<% end %>
 </div>
 </div>

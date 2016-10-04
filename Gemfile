@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
-
 gem 'carrierwave'
 gem 'mini_magick'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'bootstrap-sass', '3.2.0.2'
 gem 'rails', '4.0.1'
 
 # Use sqlite3 as the database for Active Record

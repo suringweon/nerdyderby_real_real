@@ -14,12 +14,16 @@
 				</tr>
 			</thead>
 			<tbody>
+<% if !@users.nil?%>
 <% @users.each do |user|%>
 
 				<tr>
 					<th><%=user.id%></th><td><%= user.username%> </td><td><%=user.carname%></td><td><%= user.rail%></td><td><%=user.group%><td><a href="/main/admin_complete/<%=user.id%>" >[x]</a></td>
 
 				</tr>
+				<%end%>
+<%else%>
+<p> there is no registor </p>
 <% end %>
 			</tbody>
 		</table>
