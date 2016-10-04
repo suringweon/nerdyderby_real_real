@@ -28,40 +28,40 @@ THE<br>FASTEST
 </div>
 </div>
 
-
-
 <div class="col-md-7" id="fastrank">
 <% first = @users.first %>
 <% second =@users.second %>
 <% third = @users.third %>
-
 <p> 이름 , 차이름 , 기록 </p>
-
 <div class="firstbox" id="fastfirst">
-<% if first.nil? %>
+<% if !first.nil? %>
+<% if first.record=="" %>
 	<p> no record yet </p>
 <%else%>
 <p><%= first.username %>, <%= first.carname %>, <%= first.record %></p>
 <% end%>
+<% end %>
 </div>
 <div id="redcar_fast"></div>
 
 
 <div class="secondbox" id="fastsecond">
-<% if second.nil? %>
+<% if !second.nil? %>
+<% if second.record=="" %>
 	<p> no record yet </p>
 <%else%>
 <p><%= second.username %>, <%= second.carname %>, <%= second.record %></p>
-<% end%>
+<% end%><%end%>
 </div>
 <div class="bluecar" id="bluecar_fast"></div>
 
 <div class="thirdbox" id="fastthird">
-<% if third.nil? %>
+<% if !third.nil? %>
+<% if third.record=="" %>
 	<p> no record yet </p>
 <%else%>
 <p><%= third.username %>, <%= third.carname %>, <%= third.record %></p>
-<% end%>
+<% end%><%end%>
 </div>
 <div id="yellowcar_fast"></div>
 
@@ -135,27 +135,30 @@ THE<br>FASTEST
 <p> 이름 , 차이름 , 기록 </p>
 
 <div class="firstbox" id="slowfirst">
-<% if rfirst.nil? %>
+<% if !rfirst.nil? %>
+<% if rfirst.record == "" %>
 	<p> no record yet </p>
 <%else%>
 <p><%= rfirst.username %>, <%= rfirst.carname %>, <%= rfirst.record %></p>
-<% end%>
+<% end%><%end%>
 </div>
 
 <div class="secondbox" id="slowsecond">
-<% if rsecond.nil? %>
+<% if !rsecond.nil? %>
+<% if rsecond.record =="" %>
 	<p> no record yet </p>
 <%else%>
 <p><%= rsecond.username %>, <%= rsecond.carname %>, <%= rsecond.record %></p>
-<% end%>
+<% end%><%end%>
 </div>
 
 <div class="thirdbox" id="slowthird">
-<% if rthird.nil? %>
+<% if !rsecond.nil? %>
+<% if rthird.record =="" %>
 	<p> no record yet </p>
 <%else%>
 <p><%= rthird.username %>, <%= rthird.carname %>, <%= rthird.record %></p>
-<% end%>
+<% end%><%end%>
 </div>
 
 

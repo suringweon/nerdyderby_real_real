@@ -3,17 +3,18 @@ class MainController < ApplicationController
 def rank
 	#	@users = User.order(:record)
 	  # 시간대별로 사람 띄우는법...
+	if !User.last.nil?
 	@data = User.last.record
+	end
 	recent = Time.now.hour
-  i=0
-  j=0
-  k=0
+	
+	t = Turn.last.tmp
 
-  @A = User.where(group: recent, rail: "A")[i]
-  @B = User.where(group: recent, rail: "B")[j]
-  @C = User.where(group: recent, rail: "C")[k]
+  @A = User.where(group: recent, rail: "A")[t]
+  @B = User.where(group: recent, rail: "B")[t]
+  @C = User.where(group: recent, rail: "C")[t]
 
-	@users = User.where(group: Time.now.hour).order(:record)
+	@users = User.where(group: Time.now.hour).where.not(record: "").order(:record)
 	end
 
   def regist
@@ -55,31 +56,28 @@ def rank
 		c = data.split('/')[2]
 		turn = data.split('/')[3].to_i
 
-		user_a = User.where(rail: "A", record:"")[turn]
-		user_b = User.where(rail: "B", record:"")[turn]
-		user_c = User.where(rail: "C", record:"")[turn]
+		t = Turn.last
+		t.tmp = turn
+		t.save
+
+		user_a = User.where(rail: "A", record:"")[0]
+		user_b = User.where(rail: "B", record:"")[0]
+		user_c = User.where(rail: "C", record:"")[0]
 
 		if !user_a.nil?
 			user_a.record = a.split(':')[1]
 			user_a.save
-		else
-		 #user_a가 없는경우에는? => 아무것도안할꺼임
 		end
 
 		if !user_b.nil?
 			user_b.record = b.split(':')[1]
 			user_b.save
-		else
-		 #user_a가 없는경우에는? => 아무것도안할꺼임
 		end
 		
 		if !user_c.nil?
 			user_c.record = c.split(':')[1]
 			user_c.save
-		else
-		 #user_a가 없는경우에는? => 아무것도안할꺼임
 		end
-	
 	end
 		
 

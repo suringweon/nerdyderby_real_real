@@ -10,7 +10,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>id</th><th>이름</th><th>차량이름</th><th>트랙</th><th>그룹</th><th>삭제</th>
+					<th>id</th><th>이름</th><th>차량이름</th><th>트랙</th><th>그룹</th><th>기록</th><th>삭제</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,7 +18,7 @@
 <% @users.each do |user|%>
 
 				<tr>
-					<th><%=user.id%></th><td><%= user.username%> </td><td><%=user.carname%></td><td><%= user.rail%></td><td><%=user.group%><td><a href="/main/admin_complete/<%=user.id%>" >[x]</a></td>
+					<th><%=user.id%></th><td><%= user.username%> </td><td><%=user.carname%></td><td><%= user.rail%></td><td><%=user.group%></td><td><%=user.record%></td><td><a href="/main/admin_complete/<%=user.id%>" >[x]</a></td>
 
 				</tr>
 				<%end%>
