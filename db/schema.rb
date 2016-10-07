@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20161004115300) do
     t.string   "carname"
     t.string   "image"
     t.string   "rail"
-    t.string   "record",     default: ""
+    t.integer  "record",     default: -1
     t.integer  "group"
     t.string   "content",    default: ""
     t.datetime "created_at"

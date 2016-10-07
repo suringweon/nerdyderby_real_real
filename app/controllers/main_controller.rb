@@ -1,20 +1,12 @@
 class MainController < ApplicationController
 #before_action :admin_check, :only => :admin
 def rank
-	#	@users = User.order(:record)
-	  # 시간대별로 사람 띄우는법...
-	if !User.last.nil?
-	@data = User.last.record
-	end
-	recent = Time.now.hour
-	
-	t = Turn.last.tmp
 
-  @A = User.where(group: recent, rail: "A")[t]
-  @B = User.where(group: recent, rail: "B")[t]
-  @C = User.where(group: recent, rail: "C")[t]
+  @A = User.where(record: -1, rail: "A")[0]
+  @B = User.where(record: -1, rail: "B")[0]
+  @C = User.where(record: -1, rail: "C")[0]
 
-	@users = User.where(group: Time.now.hour).where.not(record: "").order(:record)
+	@users = User.where.not(record: -1).order(:record)
 	end
 
   def regist
@@ -54,35 +46,29 @@ def rank
 		a = data.split('/')[0]
 		b = data.split('/')[1]
 		c = data.split('/')[2]
-		turn = data.split('/')[3].to_i
 
-		t = Turn.last
-		t.tmp = turn
-		t.save
-
-		user_a = User.where(rail: "A", record:"")[0]
-		user_b = User.where(rail: "B", record:"")[0]
-		user_c = User.where(rail: "C", record:"")[0]
+		user_a = User.where(rail: "A", record:-1)[0]
+		user_b = User.where(rail: "B", record:-1)[0]
+		user_c = User.where(rail: "C", record:-1)[0]
 
 		if !user_a.nil?
-			user_a.record = a.split(':')[1]
+			user_a.record = a.split(':')[1].to_i
 			user_a.save
 		end
 
 		if !user_b.nil?
-			user_b.record = b.split(':')[1]
+			user_b.record = b.split(':')[1].to_i
 			user_b.save
 		end
 		
 		if !user_c.nil?
-			user_c.record = c.split(':')[1]
+			user_c.record = c.split(':')[1].to_i
 			user_c.save
 		end
 	end
 		
 
 	def before_admin
-		@data = User.last.record
 	end
 
 

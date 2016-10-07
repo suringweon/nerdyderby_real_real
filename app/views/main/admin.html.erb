@@ -6,7 +6,8 @@
 	<p>사용자 정보를 삭제할 수 있습니다.</p>
 	</div>
 <div class="panel panel-default">
-		<!-- Table -->
+<!-- Table -->
+<% if !@users.nil?%>
 		<table class="table">
 			<thead>
 				<tr>
@@ -14,18 +15,20 @@
 				</tr>
 			</thead>
 			<tbody>
-<% if !@users.nil?%>
-<% @users.each do |user|%>
+
+	<% @users.each do |user|%>
 
 				<tr>
 					<th><%=user.id%></th><td><%= user.username%> </td><td><%=user.carname%></td><td><%= user.rail%></td><td><%=user.group%></td><td><%=user.record%></td><td><a href="/main/admin_complete/<%=user.id%>" >[x]</a></td>
 
 				</tr>
 				<%end%>
-<%else%>
-<p> there is no registor </p>
-<% end %>
 			</tbody>
 		</table>
+<%else%>
+<p> there is no registor </p>
+
+
+<% end %>
 </div>
 </div>
