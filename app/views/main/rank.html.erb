@@ -1,13 +1,16 @@
 <%= render :partial => "layouts/header" %>
 <link rel"stylesheet" type="text/css" href="assets/rank.css">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
 
-<div class="container">
 
+<div class="container-fluid" id="rankcontainer">
+
+
+<div class="col-md-5" id="viewleft">
+<!--크게 세로 두줄--!>
 <div class="row">
-	<div class="col-md-3">
-	</div>
-<div class="col-md-1" id="fasttrophy">
+<div class="col-md-2" id="fasttrophy">
 	<div id="fastpic"></div>
 	<div class="trophytitle">
 		THE<br>FASTEST
@@ -17,21 +20,31 @@
 <% first = @users.first %>
 <% second =@users.second %>
 <% third = @users.third %>
-<div class="col-md-7" id="fastrank">
+<div class="col-md-10" id="fastrank">
 <div class="firstbox" id="fastfirst">
 	<% if first.nil? %>
 		<p> no record yet </p>
 	<%else%>
-		<p><%= first.username %>, <%= first.carname %>, <%= first.record %></p>
+	<table>
+	<tr>
+	<td class="rankcontent"><p><font class="username"><%= first.username %> </font><%= first.carname %></p></td>
+	<td><p><%= first.record %>"</p></td>
+	</tr>
+	</table>
 	<% end%>
 </div>
-<div id="redcar_fast"></div>
+<div class="redcar"  id="redcar_fast"></div>
 
 <div class="secondbox" id="fastsecond">
 <% if second.nil? %>
 	<p> no record yet </p>
 <%else%>
-<p><%= second.username %>, <%= second.carname %>, <%= second.record %></p>
+	<table>
+	<tr>
+	<td class="rankcontent"><p><font class="username"><%=second.username %> </font><%= second.carname %></p></td>
+	<td><%= second.record %>"</p></td>
+	</tr>
+	</table>
 <%end%>
 </div>
 <div class="bluecar" id="bluecar_fast"></div>
@@ -40,19 +53,23 @@
 <% if third.nil? %>
 	<p> no record yet </p>
 <%else%>
-<p><%= third.username %>, <%= third.carname %>, <%= third.record %></p>
+	<table>
+	<tr>
+	<td class="rankcontent"><p><font class="username"><%=third.username %> </font><%= third.carname %></p></td>
+	<td><%= third.record %>"</p></td>
+	</tr>
+	</table>
+
 <%end%>
 </div>
-<div id="yellowcar_fast"></div>
+<div class="yellowcar"  id="yellowcar_fast"></div>
 </div>
 
 
-<div class="col-md-1">
-</div>
 
 </div>
 <!--여기까지 fast 기록 표시한거 --!> 
-<div class="row">
+<!--<div class="row">
 
 <div class="col-md-3" id="logobox_rank">
 	<img src="/nd_logo_new.png" id="logo">
@@ -60,6 +77,7 @@
 </div>
 
 <div class="col-md-2" id="nowtrack1">
+<p class="trackname">A</p>
 <% if !@A.nil? %>
 <p>	<%= @A.username %>,<%= @A.carname %></p>
 <p><img src="<%=@A.image_url(:thumb)%>"></p>
@@ -69,6 +87,7 @@
 </div>
 
 <div class="col-md-2" id="nowtrack2">
+<p class="trackname">B</p>
 <% if !@B.nil? %>
 <p>	<%= @B.username %>,<%= @B.carname %></p>
 <p><img src="<%=@B.image_url(:thumb)%>"></p>
@@ -78,6 +97,7 @@
 </div>
 
 	<div class="col-md-2" id="nowtrack3">
+<p class="trackname">C</p>
 <%if !@C.nil? %>
 	<p>	<%= @C.username %>,<%= @C.carname %></p>
 	<p><img src="<%=@C.image_url(:thumb)%>"></p>
@@ -91,19 +111,18 @@
 </div>
 
 </div>
+--!>
 <!-- 여기까지 트랙표시--!>
 
 <div class="row">
 
-<div class="col-md-3">
-</div>
 
-<div class="col-md-1" id="slowtrophy">
+<div class="col-md-2" id="slowtrophy">
 <div id="slowpic"></div>
 <p class="trophytitle">THE SLOWEST</p>
 </div>
 
-<div class="col-md-7" id="slowrank">
+<div class="col-md-10" id="slowrank">
 <% rfirst = @users.reverse.first %>
 <% rsecond =@users.reverse.second %>
 <% rthird = @users.reverse.third %>
@@ -112,34 +131,136 @@
 <% if rfirst.nil? %>
 	<p> no record yet </p>
 <%else%>
-<p><%= rfirst.username %>, <%= rfirst.carname %>, <%= rfirst.record %></p>
+	<table>
+	<tr>
+	<td class="rankcontent"><p><font class="username"><%= rfirst.username %> </font><%= rfirst.carname %></p></td>
+	<td><p><%= rfirst.record %>"</p></td>
+	</tr>
+	</table>
 <%end%>
 </div>
+<div class="redcar"  id="redcar_slow"></div>
+
 
 <div class="secondbox" id="slowsecond">
 <% if rsecond.nil? %>
 	<p> no record yet </p>
 <%else%>
-<p><%= rsecond.username %>, <%= rsecond.carname %>, <%= rsecond.record %></p>
+	<table>
+	<tr>
+	<td class="rankcontent"><p><font class="username"><%= rsecond.username %> </font><%= first.carname %></p></td>
+	<td><p><%= rsecond.record %>"</p></td>
+	</tr>
+	</table>
 <%end%>
 </div>
+<div class="bluecar"  id="bluecar_slow"></div>
 
 <div class="thirdbox" id="slowthird">
-<% if rsecond.nil? %>
+<% if rthird.nil? %>
 	<p> no record yet </p>
 <%else%>
-<p><%= rthird.username %>, <%= rthird.carname %>, <%= rthird.record %></p>
+	<table>
+	<tr>
+	<td class="rankcontent"><p><font class="username"><%= rthird.username %> </font><%= rthird.carname %></p></td>
+	<td><p><%= rthird.record %>"</p></td>
+	</tr>
+	</table>
 <%end%>
 </div>
+<div class="yellowcar"  id="yellowcar_slow"></div>
 
 
 </div>
 
-<div class="col-md-1">
-</div>
 
 
 </div>
+</div><!--여기서 첫번째 큰 세로줄 닫힘--!>
+
+
+<div class ="col-md-7" id="viewright">
+<div class="row">
+
+<div id="logobox_rank">
+	<img src="/nd_logo_new.png" id="logo_rank">
+	<p id="pagename">P L A Y E R</p>
+	<p id="round">ROUND <%=@recent%></p>
+</div>
+<!--
+<div class="col-md-2" id="nowtrack1">
+<p class="trackname">A</p>
+<% if !@A.nil? %>
+<p>	<%= @A.username %>,<%= @A.carname %></p>
+<p><img src="<%=@A.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
+</div>
+
+<div class="col-md-2" id="nowtrack2">
+<p class="trackname">B</p>
+<% if !@B.nil? %>
+<p>	<%= @B.username %>,<%= @B.carname %></p>
+<p><img src="<%=@B.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
+</div>
+
+	<div class="col-md-2" id="nowtrack3">
+<p class="trackname">C</p>
+<%if !@C.nil? %>
+	<p>	<%= @C.username %>,<%= @C.carname %></p>
+	<p><img src="<%=@C.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
+</div>
+
+
+--!>
+</div><!--첫번째 row 닫힘--!>
+
+<div class="row">
+<div class="col-md-4" id="nowtrack1">
+<p class="trackname">A</p>
+<% if !@A.nil? %>
+<p class="nowusername">	<%= @A.username %></p>
+<p class="nowcarname"><%= @A.carname %></p>
+<p class="carimg"><img src="<%=@A.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
+</div>
+
+<div class="col-md-4" id="nowtrack2">
+<p class="trackname">B</p>
+<% if !@B.nil? %>
+<p class="nowusername">	<%= @B.username %></p>
+<p class="nowcarname"><%= @B.carname %></p>
+<p class="carimg" ><img src="<%=@B.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
+</div>
+	<div class="col-md-4" id="nowtrack3">
+<p class="trackname">C</p>
+<%if !@C.nil? %>
+	<p class="nowusername">	<%= @C.username %></p>
+	<p class="nowcarname"><%= @C.carname %></p>
+	<p class="carimg"><img src="<%=@C.image_url(:thumb)%>"></p>
+<% else %>
+<p> no player now </p>
+<% end %>
+</div>
+
+</div><!--두번째 row 닫힘--!>
+
+</div>
+
+
+
 
 
 </div>

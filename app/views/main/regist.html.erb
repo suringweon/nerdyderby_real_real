@@ -6,11 +6,15 @@
 
 
 <div class="container">
-	<% if !flash[:alert].nil? %>
-	<div class="alert alert-danger">
-		<%= flash[:alert] %>
-	</div>
-	<% end %>
+
+		<script type="text/javascript">
+		  jQuery(document).ready(function(){
+				var alertText = '<%= flash[:alert]%>';
+				if(alertText.length > 0){
+					alert(alertText);
+				} 
+			});
+		</script>
 
 
 	<!--
@@ -79,7 +83,7 @@
 			</div></div>
 
 <div id="subbtn">
-	<button type="submit" class="btn btn-default btn-lg" id="submitbtn" >
+	<button type="submit" class="btn btn-default btn-lg" id="submitbtn"  >
 	등록하기
 </button>
 

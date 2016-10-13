@@ -1,12 +1,13 @@
 class MainController < ApplicationController
 #before_action :admin_check, :only => :admin
 def rank
+	@recent = Time.now.hour
+	
+  @A = User.where(group: @recent, record: -1, rail: "A")[0]
+  @B = User.where(group: @recent, record: -1, rail: "B")[0]
+  @C = User.where(group: @recent,record: -1, rail: "C")[0]
 
-  @A = User.where(record: -1, rail: "A")[0]
-  @B = User.where(record: -1, rail: "B")[0]
-  @C = User.where(record: -1, rail: "C")[0]
-
-	@users = User.where.not(record: -1).order(:record)
+	@users = User.where(group: @recnet).where.not(record: -1).where.not(record: 0).order(:record)
 	end
 
   def regist
@@ -31,12 +32,16 @@ def rank
 		end
 			
 		if user.save
-			flash[:alert] = "성공적으로 등록되었습니다. 당신의 트랙은 #{User.last.rail} 입니다.group = #{User.last.group}"
-			redirect_to "/main/regist"
+			flash[:alert] = "성공적으로 등록되었습니다. 당신의 트랙은 #{User.last.rail}, #{User.last.group}그룹 입니다."
+			redirect_to :back
 		else 
 			flash[:alert] = user.errors.values.flatten.join(' ')
 		redirect_to :back
 		end
+	end
+
+	def check_regist
+		
 	end
 
 #get data from adrduino
