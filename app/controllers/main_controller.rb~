@@ -7,7 +7,7 @@ def rank
   @B = User.where(group: @recent, record: -1, rail: "B")[0]
   @C = User.where(group: @recent,record: -1, rail: "C")[0]
 
-  @users = User.where(group: @recent).where.not(record: -1).where.not(record: 0).order(:record)
+	@users = User.where(group: @recnet).where.not(record: -1).where.not(record: 0).order(:record)
 	end
 
   def regist
